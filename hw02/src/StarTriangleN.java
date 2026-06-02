@@ -5,6 +5,14 @@ public class StarTriangleN {
      */
    public static void starTriangle(int N) {
       // TODO: Fill in this function
+
+      int i = 0;
+      while ( i < N )
+      {
+         IO.println(" ".repeat(N - i) + "*".repeat(i+1));
+         i++;
+      }
+
    }
    
    public static void main(String[] args) {

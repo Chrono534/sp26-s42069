@@ -5,7 +5,13 @@ public class DoubleUp {
      */
    public static String doubleUp(String s) {
       // TODO: Fill in this function
-      return null;
+      String newString = "";
+
+      for ( int i = 0; i < s.length(); i++ )
+      {
+         newString += String.valueOf(s.charAt(i)).repeat(2);
+      }
+      return newString;
    }
    
    public static void main(String[] args) {
