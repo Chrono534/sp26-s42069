@@ -39,9 +39,14 @@ public class IntList {
      * each element incremented by x. Modifies the original list.
      * You are not allowed to use "new" in this method.
      */
-    public static IntList incrRecursiveDestructive(IntList L, int x) {
-        // TODO: Fill in this code
-        return null;
+    public static IntList incrRecursiveDestructive(IntList L, int x)
+    {
+        if ( L == null )
+            return null;
+
+        L.first += x;
+        L.rest = incrRecursiveDestructive(L.rest, x);
+        return L;
     }
 
     /*
@@ -55,14 +60,22 @@ public class IntList {
      */
     public int sum() {
         // Optional: Fill in this code
-        return 0;
+        if ( this.rest == null )
+            return this.first;
+        return this.first + this.rest.sum();
     }
 
     /**
      * Destructively adds x to the end of the list.
      */
     public void addLast(int x) {
-        // Optional: Fill in this code
+        // Optional:
+        if ( this.rest == null )
+        {
+            this.rest = new IntList(x, null);
+            return;
+        }
+        this.rest.addLast(x);
     }
 
     /**
@@ -73,5 +86,13 @@ public class IntList {
      */
     public void addFirst(int x) {
         // Optional: Fill in this code
+
+        // copy current value in list
+        int temp = this.first;
+        //new value is x
+        this.first = x;
+
+        // rest ptr -> new node, which is created with temp -> rest.rest
+        this.rest = new IntList(temp, this.rest);
     }
 }

@@ -10,6 +10,8 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class IntListOptionalTests {
+public class IntListOptionalTests
+{
     // TBD
+
 }
