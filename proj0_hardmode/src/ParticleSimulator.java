@@ -117,7 +117,7 @@ public class ParticleSimulator
 
     static void main()
     {
-        ParticleSimulator particleSimulator = new ParticleSimulator(250, 250);
+        ParticleSimulator particleSimulator = new ParticleSimulator(150, 150);
         StdDraw.setXscale(0, particleSimulator.width);
         StdDraw.setYscale(0, particleSimulator.height);
         StdDraw.enableDoubleBuffering();
